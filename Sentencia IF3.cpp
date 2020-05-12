@@ -1,10 +1,7 @@
  	/*Es una istrucción que usamos para ayudar a nuestro programa a tomar decisiones*/
 	
 	
-	/*Hacer un programa que lea un número entero positivo de cuatro cifras. Ese número significa un año
-	Se pide visualizar si dicho año es bisiesto o no.
-	
-	*/
+	/*Realizar un programa que lea un número entero y que imprima si termina o no termina en 23*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,27 +12,20 @@ int main (void)
 {
 	setlocale (LC_CTYPE, "Spanish");
 	
-	int digito;
-	int prim;
-	int seg;
+	int num;
+	int result;
 
-	printf ("Indique un número entero positivo de 4 dígitos: ");
-	scanf ("%d", &digito);
+	printf ("Indique un número entero: ");
+	scanf ("%d", &num);
 	fflush (stdin);
 	printf ("\n\n");
 	
-	if (digito>999 && digito<=9999){
-		prim=(digito / 100);
-		seg=(digito % 100);
-			if (prim % 4 == 0 && seg == 00)
-				printf("El año ingresado es bisiesto secular");
-			else if(seg != 00 && seg % 4 == 0)
-				printf("El año ingresado es bisiesto no secular");
-			else
-				printf("El año ingresado no es bisiesto ni secular");
-	}
+	result=(num % 100);
+	
+	if (result == 23 || result == -23)
+		printf ("El número ingresado termina en 23");
 	else
-		printf("El número ingresado no es válido");
+		printf ("El número ingresado no termina en 23");
 			
 	printf ("\n\n");
 	
